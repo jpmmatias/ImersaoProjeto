@@ -142,6 +142,8 @@ MonoBehaviour:
   force: 400
   ballPrefab: {fileID: 6825614077620976021, guid: 1e40697d488721a4ab7e8289793551fe,
     type: 3}
+  ballsFired: 0
+  haveBalls: 1
 --- !u!1 &529786946
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,9 +326,11 @@ MonoBehaviour:
   targetPrefab: {fileID: 2866943377639147013, guid: c8805d7c1991e95499e933ddebae41f6,
     type: 3}
   targetAmount: 5
+  player: {fileID: 224930568}
   availableShots: 10
   targetDistanceMin: 2
   targetDistanceMax: 6
+  playerMovment: {fileID: 1031592037}
 --- !u!4 &886834137
 Transform:
   m_ObjectHideFlags: 0
@@ -341,6 +345,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1031592037 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7629126752727959611, guid: 13ad18a23206aa743868f215abff5d50,
+    type: 3}
+  m_PrefabInstance: {fileID: 1797135010}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148641016a243e24da29ca1b562c7a26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1035572159
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -18,14 +18,11 @@ public class Copo : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-     //   startSwipe = Input.mousePosition;
-
-      startSwipe = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+            startSwipe = Camera.main.ScreenToViewportPoint(Input.mousePosition);
         }
         if (Input.GetButtonUp("Fire1"))
         {
-    //  endS  = Input.mousePosition;
-    endS= Camera.main.ScreenToViewportPoint(Input.mousePosition);
+            endS= Camera.main.ScreenToViewportPoint(Input.mousePosition);
             Swipe();
         }
     }

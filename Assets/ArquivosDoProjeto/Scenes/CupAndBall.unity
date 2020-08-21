@@ -381,8 +381,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 482466955}
-  - component: {fileID: 482466954}
   - component: {fileID: 482466956}
+  - component: {fileID: 482466954}
   m_Layer: 0
   m_Name: Cup
   m_TagString: Untagged
@@ -405,7 +405,7 @@ MonoBehaviour:
   downHeight: 0.977
   upHeight: 1.19
   movingSpeed: 3
-  ball: {fileID: 0}
+  ball: {fileID: 1500387216}
   targetPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &482466955
 Transform:
@@ -766,8 +766,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 1500387216}
   cups:
-  - {fileID: 482466954}
   - {fileID: 2037473830}
+  - {fileID: 482466954}
   - {fileID: 1699741573}
   player: {fileID: 7629126752033555502}
   playerMovment: {fileID: 7629126753302620161}
@@ -1023,8 +1023,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1699741574}
-  - component: {fileID: 1699741573}
   - component: {fileID: 1699741575}
+  - component: {fileID: 1699741573}
   m_Layer: 0
   m_Name: Cup (2)
   m_TagString: Untagged
@@ -1047,7 +1047,7 @@ MonoBehaviour:
   downHeight: 0.977
   upHeight: 1.19
   movingSpeed: 3
-  ball: {fileID: 0}
+  ball: {fileID: 1500387216}
   targetPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1699741574
 Transform:
@@ -1352,8 +1352,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2037473831}
-  - component: {fileID: 2037473830}
   - component: {fileID: 2037473832}
+  - component: {fileID: 2037473830}
   m_Layer: 0
   m_Name: Cup (1)
   m_TagString: Untagged
@@ -1376,7 +1376,7 @@ MonoBehaviour:
   downHeight: 0.977
   upHeight: 1.19
   movingSpeed: 3
-  ball: {fileID: 0}
+  ball: {fileID: 1500387216}
   targetPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &2037473831
 Transform:

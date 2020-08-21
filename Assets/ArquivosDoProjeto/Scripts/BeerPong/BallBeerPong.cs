@@ -20,7 +20,6 @@ public class BallBeerPong : MonoBehaviour
     {
         if (collision.gameObject.tag == "targetBeerPong")
         {
-            Debug.Log("collision");
             Destroy(collision.gameObject);
         }
     }
