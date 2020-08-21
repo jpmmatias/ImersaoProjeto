@@ -5,18 +5,30 @@ using UnityEngine;
 public class PlayerMovment : MonoBehaviour
 {
     public int playerSpeed;
+    private int savedSpeed;
+    public bool stop = false;
     private CharacterController controller;
     private float gravity = 10f;
   
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        savedSpeed = playerSpeed;
 
     }
 
    
     void Update()
     {
+        if (stop)
+        {
+            playerSpeed = 0;
+            Debug.Log("stop");
+        }
+        else
+        {
+            StartCoroutine(moveAgain());
+        }
         //Touch
 
         if (Input.GetButton("Fire1"))
@@ -43,4 +55,11 @@ public class PlayerMovment : MonoBehaviour
 
 
     }
+
+    private IEnumerator moveAgain()
+    {
+        yield return new WaitForSeconds(.5f);
+        playerSpeed = savedSpeed;
+        Debug.Log("moving");
+}
 }
