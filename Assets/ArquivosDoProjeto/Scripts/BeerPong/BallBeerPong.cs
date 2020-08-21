@@ -4,32 +4,24 @@ using UnityEngine;
 
 public class BallBeerPong : MonoBehaviour
 {
-    public bool hitSomething;
-    public bool gotRightTarget;
-    public int score = 0;
-   
+    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-  
+    // Update is called once per frame
     void Update()
     {
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == "targetBeerPong")
+        if (collision.gameObject.tag == "targetBeerPong")
         {
-            hitSomething = true;
-            gotRightTarget = true;
-            score ++;
-        } else if (other.tag== "wrongTargetBeerPong")
-        {
-            hitSomething = true;
-            gotRightTarget = false;
+            Debug.Log("collision");
+            Destroy(collision.gameObject);
         }
     }
 }
