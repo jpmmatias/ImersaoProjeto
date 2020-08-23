@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyBall : MonoBehaviour
 {
-    public float lifetime = 10f;
+    public float lifetime = 5f;
     void Start()
     {
         

@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public Cup[] cups;
     public PlayerPlayCupBall player;
     public PlayerMovment playerMovment;
+    public SceneLoader sceneLoader;
 
     void Start()
     {
@@ -23,13 +24,21 @@ public class GameController : MonoBehaviour
             if (player.won)
             {
                 Debug.Log("Won");
+                StartCoroutine(EndGameRoutine());
             }
             else
             {
                 Debug.Log("Lose");
+                StartCoroutine(EndGameRoutine());
             }
         }
 
+    }
+
+    private IEnumerator EndGameRoutine()
+    {
+        yield return new WaitForSeconds(3f);
+        sceneLoader.LoadCasaScene();
     }
 
     private IEnumerator ShuffleRoutine()

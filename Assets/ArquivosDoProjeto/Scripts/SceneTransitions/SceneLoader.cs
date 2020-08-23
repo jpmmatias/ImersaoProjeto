@@ -13,6 +13,16 @@ public class SceneLoader : MonoBehaviour
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
+    public void LoadCasaScene()
+    {
+        StartCoroutine(LoadLevel(0));
+    }
+
+    public void LoadCupAndBall()
+    {
+        StartCoroutine(LoadLevel(1));
+    }
+
     IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("Start");

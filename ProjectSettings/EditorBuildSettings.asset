@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/ArquivosDoProjeto/Scenes/Casa.unity
     guid: 7eef78a4f3f83f54d9f531a745668158
   - enabled: 1
-    path: Assets/ArquivosDoProjeto/Scenes/Teste.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/ArquivosDoProjeto/Scenes/CupAndBall.unity
+    guid: e05d6c469060696428accdf73964c78f
   m_configObjects: {}

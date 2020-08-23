@@ -8,28 +8,28 @@ public class BeerPongController : MonoBehaviour
     public int targetAmount;
     public PlayBeerPong player;
     public int availableShots = 10;
-    public float targetDistanceMin = 2f;
-    public float targetDistanceMax = 5f;
     public PlayerMovment playerMovment;
+
+    public Transform table;
+    public Vector3[] locations;
 
     void Start()
     {
-        playerMovment.stop = true;
+        
         for(int i=0; i < targetAmount; i++)
         {
             GameObject target = Instantiate(targetPrefab);
-            target.transform.SetParent(transform);
-            target.transform.position = new Vector3(Random.Range(targetDistanceMin, targetDistanceMax), 3, Random.Range(targetDistanceMin, targetDistanceMax));
+            target.transform.SetParent(table);
+            target.transform.localPosition = locations[i];
 
         }
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         int remainingShots = availableShots - player.ballsFired;
-        int remainingTargets = transform.childCount;
+        int remainingTargets = table.transform.childCount;
         Debug.Log("remainingShots:"+ remainingShots);
         Debug.Log("remainingTargets:" + remainingTargets);
         if (remainingShots <= 0 || remainingTargets<=0)
