@@ -10,6 +10,7 @@ public class BallBeerPong : MonoBehaviour
         if (collision.gameObject.tag == "targetBeerPong")
         {
             Destroy(collision.gameObject);
+            Destroy(this.gameObject);
         }
 
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class BeerPongController : MonoBehaviour
 {
     public GameObject targetPrefab;
+    public SceneLoader sceneLoader;
     public int targetAmount;
     public PlayBeerPong player;
     public int availableShots = 10;
@@ -31,25 +32,30 @@ public class BeerPongController : MonoBehaviour
     {
         int remainingShots = availableShots - player.ballsFired;
         int remainingTargets = table.transform.childCount;
-        Debug.Log("remainingShots:"+ remainingShots);
-        Debug.Log("remainingTargets:" + remainingTargets);
-        if (remainingShots <= 0 || remainingTargets<=0)
+        if (remainingShots <= 0 || remainingTargets<=1)
         {
             player.haveBalls = false;
-            playerMovment.stop = false;
-            if (remainingTargets == 0)
+            Debug.Log(remainingTargets);
+            if (remainingTargets == 1)
             {
 
                 Debug.Log("You Won!");
-                Debug.Log("Game Over");
-                playerMovment.stop = false;
+                StartCoroutine(GameOver());
+               
             }
             else
             {
                 Debug.Log("You Lose!");
-                Debug.Log("Game Over");
-                playerMovment.stop = false;
+                StartCoroutine(GameOver());
+
+
             }
         }
     }
+    IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(1.5f);
+        sceneLoader.LoadCasaScene();
+    }
 }
+
