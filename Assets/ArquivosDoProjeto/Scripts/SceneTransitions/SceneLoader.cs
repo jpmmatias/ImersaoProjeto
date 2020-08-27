@@ -23,6 +23,16 @@ public class SceneLoader : MonoBehaviour
         StartCoroutine(LoadLevel(1));
     }
 
+    public void LoadBeerPong()
+    {
+        StartCoroutine(LoadLevel(2));
+    }
+
+    public void LoadFlipCup()
+    {
+        StartCoroutine(LoadLevel(3));
+    }
+
     IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("Start");

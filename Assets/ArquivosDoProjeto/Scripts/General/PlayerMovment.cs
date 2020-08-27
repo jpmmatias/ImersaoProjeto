@@ -60,6 +60,6 @@ public class PlayerMovment : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         playerSpeed = savedSpeed;
-        Debug.Log("moving");
+       
 }
 }

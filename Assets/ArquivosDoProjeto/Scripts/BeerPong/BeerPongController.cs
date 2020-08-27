@@ -15,8 +15,9 @@ public class BeerPongController : MonoBehaviour
 
     void Start()
     {
-        
-        for(int i=0; i < targetAmount; i++)
+        playerMovment.stop = true;
+
+        for (int i=0; i < targetAmount; i++)
         {
             GameObject target = Instantiate(targetPrefab);
             target.transform.SetParent(table);
@@ -41,11 +42,13 @@ public class BeerPongController : MonoBehaviour
 
                 Debug.Log("You Won!");
                 Debug.Log("Game Over");
+                playerMovment.stop = false;
             }
             else
             {
                 Debug.Log("You Lose!");
                 Debug.Log("Game Over");
+                playerMovment.stop = false;
             }
         }
     }
