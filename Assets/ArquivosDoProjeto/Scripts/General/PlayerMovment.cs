@@ -23,7 +23,6 @@ public class PlayerMovment : MonoBehaviour
         if (stop)
         {
             playerSpeed = 0;
-            Debug.Log("stop");
         }
         else
         {

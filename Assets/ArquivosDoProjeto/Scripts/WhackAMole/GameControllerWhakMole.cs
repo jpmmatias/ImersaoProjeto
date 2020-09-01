@@ -10,18 +10,20 @@ public class GameControllerWhakMole : MonoBehaviour
     public float spawnDecrement = 0.1f;
     public float minimumSpawnDuration = 0.5f;
     public float gameTimer = 15f;
+    public SceneLoader SceneLoader;
 
     private Mole[] moles;
     private float spawnTimer = 0f;
     private float resetTimer = 3f;
 
-    // Use this for initialization
+
+   
     void Start()
     {
         moles = moleContainer.GetComponentsInChildren<Mole>();
     }
 
-    // Update is called once per frame
+ 
     void Update()
     {
         gameTimer -= Time.deltaTime;
@@ -49,14 +51,22 @@ public class GameControllerWhakMole : MonoBehaviour
             Debug.Log( "Game over! Your score: " + Mathf.Floor(player.score));
             if (Mathf.Floor(player.score) > 5)
             {
+                StartCoroutine(loadCasa());
                 Debug.Log("You Win");
             }
             else
             {
+                StartCoroutine(loadCasa());
                 Debug.Log("You lose");
             }
             resetTimer -= Time.deltaTime;
            
         }
+    }
+
+    IEnumerator loadCasa()
+    {
+       yield return  new WaitForSeconds(2f);
+        SceneLoader.LoadCasaScene();
     }
 }

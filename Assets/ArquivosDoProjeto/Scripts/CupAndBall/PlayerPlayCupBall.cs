@@ -26,6 +26,7 @@ public class PlayerPlayCupBall : MonoBehaviour
 
                 if (Physics.Raycast(transform.position, transform.forward, out hit))
                 {
+                    Debug.Log("yo");
                     Cup cup = hit.transform.GetComponent<Cup>();
                     if (cup != null)
                     {
