@@ -11,16 +11,22 @@ public class GameControllerWhakMole : MonoBehaviour
     public float minimumSpawnDuration = 0.5f;
     public float gameTimer = 15f;
     public SceneLoader SceneLoader;
-
+    private bool Onetime = false;
     private Mole[] moles;
     private float spawnTimer = 0f;
     private float resetTimer = 3f;
 
+    public int NumOfLoses;
+    
 
-   
+    private bool WhackGameWin;
+
+
+
     void Start()
     {
         moles = moleContainer.GetComponentsInChildren<Mole>();
+        NumOfLoses = PlayerPrefs.GetInt("NumOfLoses", 0);
     }
 
  
@@ -48,25 +54,51 @@ public class GameControllerWhakMole : MonoBehaviour
         else
         {
             
-            Debug.Log( "Game over! Your score: " + Mathf.Floor(player.score));
             if (Mathf.Floor(player.score) > 5)
             {
+                WhackGameWin = true;
                 StartCoroutine(loadCasa());
-                Debug.Log("You Win");
+               
             }
             else
             {
+                WhackGameWin = false;
+                if (!Onetime)
+                {
+                    NumOfLoses++;
+                    Onetime = true;
+                    PlayerPrefs.SetInt("NumOfLoses", NumOfLoses);
+                }
                 StartCoroutine(loadCasa());
-                Debug.Log("You lose");
             }
             resetTimer -= Time.deltaTime;
            
         }
     }
 
+    private int boolToInt(bool val)
+    {
+        if (val)
+            return 1;
+        else
+            return 0;
+    }
+
+    private bool intToBool(int val)
+    {
+        if (val != 0)
+            return true;
+        else
+            return false;
+    }
+
+    
+
     IEnumerator loadCasa()
     {
-       yield return  new WaitForSeconds(2f);
+        yield return  new WaitForSeconds(1.5f);
+        PlayerPrefs.SetInt("win" + 2, boolToInt(WhackGameWin));
         SceneLoader.LoadCasaScene();
     }
+
 }

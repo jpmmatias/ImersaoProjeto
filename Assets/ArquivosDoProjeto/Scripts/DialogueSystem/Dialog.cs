@@ -13,6 +13,7 @@ public class Dialog : MonoBehaviour
     public PlayerMovment playerMovment;
     public GameObject DialoguePanel;
     public SceneLoader sceneLoader;
+    public int loadScene;
 
     void Start()
     {
@@ -21,7 +22,7 @@ public class Dialog : MonoBehaviour
 
     void Update()
     {
-        if (textDisplay.text == sentences[index])
+        if (textDisplay.text == sentences[index] && continueButton)
         {
             continueButton.SetActive(true);
         }
@@ -50,7 +51,19 @@ public class Dialog : MonoBehaviour
             textDisplay.text = "";
             playerMovment.stop = false;
             DialoguePanel.SetActive(false);
-            sceneLoader.LoadBeerPong();
+            if (loadScene == 3)
+            {
+                sceneLoader.LoadBeerPong();
+            }
+            if (loadScene == 2)
+            {
+                sceneLoader.LoadCupAndBall();
+            }
+            if (loadScene == 4)
+            {
+                sceneLoader.LoadWhackMole();
+            }
+            
 }
     }
 

@@ -9,10 +9,15 @@ public class GameController : MonoBehaviour
     public PlayerPlayCupBall player;
     public PlayerMovment playerMovment;
     public SceneLoader sceneLoader;
+    public int NumOfLoses;
+    private bool Onetime = false;
+
+    private bool WinCupAndBall;
 
     void Start()
     {
         StartCoroutine(ShuffleRoutine());
+        NumOfLoses = PlayerPrefs.GetInt("NumOfLoses");
         playerMovment.stop = true;
     }
 
@@ -23,21 +28,48 @@ public class GameController : MonoBehaviour
         {
             if (player.won)
             {
-                Debug.Log("Won");
+                WinCupAndBall = true;
                 StartCoroutine(EndGameRoutine());
             }
             else
             {
-                Debug.Log("Lose");
+                WinCupAndBall = false;
+                if (!Onetime)
+                {
+                    NumOfLoses++;
+                    Onetime = true;
+                    PlayerPrefs.SetInt("NumOfLoses", NumOfLoses);
+                }
                 StartCoroutine(EndGameRoutine());
             }
         }
 
     }
 
+    private int boolToInt(bool val)
+    {
+        if (val)
+            return 1;
+        else
+            return 0;
+    }
+
+    private bool intToBool(int val)
+    {
+        if (val != 0)
+            return true;
+        else
+            return false;
+    }
+
     private IEnumerator EndGameRoutine()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
+        if (!WinCupAndBall)
+        {
+            NumOfLoses++;
+        }
+        PlayerPrefs.SetInt("win" + 1, boolToInt(WinCupAndBall));
         sceneLoader.LoadCasaScene();
     }
 

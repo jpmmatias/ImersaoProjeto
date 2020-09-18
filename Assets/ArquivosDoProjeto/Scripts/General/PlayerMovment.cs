@@ -30,13 +30,13 @@ public class PlayerMovment : MonoBehaviour
         }
         //Touch
 
-        if (Input.GetButton("Fire1"))
-        {
-            transform.position = new Vector3(transform.position.x + Camera.main.transform.forward.x * playerSpeed * Time.deltaTime, transform.position.y, transform.position.z + Camera.main.transform.forward.z * playerSpeed * Time.deltaTime);
-        }
+        //if (Input.GetButton("Fire1"))
+        //{
+        //    transform.position = new Vector3(transform.position.x + Camera.main.transform.forward.x * playerSpeed * Time.deltaTime, transform.position.y, transform.position.z + Camera.main.transform.forward.z * playerSpeed * Time.deltaTime);
+        //}
 
         //Controle
-        //PlayerWalk();
+        PlayerWalk();
 
 
     }
@@ -49,6 +49,7 @@ public class PlayerMovment : MonoBehaviour
         Vector3 velocity = direction * playerSpeed;
         velocity = Camera.main.transform.TransformDirection(velocity);
         velocity.y -= gravity;
+
         controller.Move(velocity * Time.deltaTime);
 
 

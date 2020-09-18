@@ -1,0 +1,7 @@
+A vomit throwing up particle spray effect!
+
+Load "Vomit.unity" for an example scene (with two particle effects synced to audio), or simply drag the particle effect from the Prefabs folder (in the Project window) into the Hierarchy window. Note that there is a both a single spray and a looping effect.
+
+Have fun!
+
+Thanks for purchasing this asset, please consider rating or writing a review about it. If you have any questions then please get in touch at bendurrant@rivermillstudios.com

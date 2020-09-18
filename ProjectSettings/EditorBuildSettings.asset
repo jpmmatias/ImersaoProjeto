@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/ArquivosDoProjeto/Scenes/StartMenu.unity
+    guid: 8213a404382309d43b916b5e0804e6ac
+  - enabled: 1
     path: Assets/ArquivosDoProjeto/Scenes/Casa.unity
     guid: 7eef78a4f3f83f54d9f531a745668158
   - enabled: 1
@@ -15,6 +18,12 @@ EditorBuildSettings:
     path: Assets/ArquivosDoProjeto/Scenes/BeerPong.unity
     guid: 078934d746d992c46b48960d602c56a0
   - enabled: 1
-    path: Assets/ArquivosDoProjeto/Scenes/FlipCup.unity
-    guid: 1b0ae176dcfa45241b3bd9ce1d6f9866
+    path: Assets/ArquivosDoProjeto/Scenes/WhakAMole.unity
+    guid: 4d3e2e8fa30ff8e44b6363ff34879f18
+  - enabled: 1
+    path: Assets/ArquivosDoProjeto/Scenes/GameOverMenu.unity
+    guid: 0067f4cf9988c40409cad8ce996e30f6
+  - enabled: 1
+    path: Assets/ArquivosDoProjeto/Scenes/WinGameOverMenu.unity
+    guid: 438682852a1bb674f9e01f78a9ad6112
   m_configObjects: {}

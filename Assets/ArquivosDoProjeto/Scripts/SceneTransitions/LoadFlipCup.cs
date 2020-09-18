@@ -12,7 +12,7 @@ public class LoadFlipCup : MonoBehaviour
         {
             if (collision.gameObject.tag == "Player")
             {
-                sceneLoader.LoadFlipCup();
+                //sceneLoader.LoadFlipCup();
             }
         }
     

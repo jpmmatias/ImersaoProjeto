@@ -838,6 +838,7 @@ MonoBehaviour:
   playerMovment: {fileID: 0}
   DialoguePanel: {fileID: 1149926827}
   sceneLoader: {fileID: 0}
+  loadScene: 0
 --- !u!4 &296313765
 Transform:
   m_ObjectHideFlags: 0
@@ -1520,7 +1521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &651199480
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1620,14 +1621,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687182420}
-  m_LocalRotation: {x: 0.120036885, y: 0.023527134, z: -0.0028455025, w: 0.9924866}
-  m_LocalPosition: {x: 1.852, y: 1.549, z: 12.594}
+  m_LocalRotation: {x: 0.50200695, y: 0.020494105, z: -0.011900196, w: 0.8645389}
+  m_LocalPosition: {x: 1.825, y: 1.422, z: 12.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1894517679}
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60.284004, y: 2.716, z: 0}
 --- !u!114 &687182422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2874,6 +2875,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialoguePanel: {fileID: 1149926827}
+  DialoguePanelWin: {fileID: 0}
+  i: 0
   playerMovment: {fileID: 0}
 --- !u!135 &1187862042
 SphereCollider:

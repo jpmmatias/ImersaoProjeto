@@ -9,6 +9,15 @@ public class CubeSpawner : MonoBehaviour
     public void SpawnCube()
     {
         var cube = Instantiate(cubePrefab);
-        cube.transform.position = new Vector3(transform.position.x, MovingCube.LastCube.transform.position.y + cubePrefab.transform.localScale.y, transform.position.z);
+        if (MovingCube.LastCube !=null && MovingCube.LastCube.gameObject != GameObject.Find("startCube"))
+        {
+           
+            cube.transform.position = new Vector3(transform.position.x, transform.position.y + cubePrefab.transform.localScale.y, transform.position.z);
+        }
+        else
+        {
+            cube.transform.position = transform.position;
+        }
+       
     }
 }

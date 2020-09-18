@@ -7,17 +7,22 @@ public class MovingCube : MonoBehaviour
     public float moveSpeed = 1.5f;
     public static MovingCube CurrentCube { get;private set;}
     public static MovingCube LastCube { get; private set; }
+     public AlmostJengaGameManager gameManager;
+    public SceneLoader SceneLoader;
     private float hangover;
 
     private void OnEnable()
     {
-        if(LastCube == null)
+        SceneLoader = GameObject.Find("LevelLoader").GetComponent<SceneLoader>(); 
+        if (LastCube == null)
         {
             LastCube = GameObject.Find("startCube").GetComponent<MovingCube>();
         }
-
-        CurrentCube = this;
+        else { CurrentCube = this; }
+        
+       
         GetComponent<Renderer>().material.color = GetRandomColor();
+       
     }
 
     private Color GetRandomColor()
@@ -37,16 +42,35 @@ public class MovingCube : MonoBehaviour
         {
             moveSpeed = moveSpeed * -1;
         }
+
+
     }
 
     public void Stop()
     {
-        moveSpeed = 0;
-        Debug.Log(hangover);
-        if (hangover > -0.01f && hangover < 0.01f)
-        {
-            transform.position = new Vector3 (transform.position.x,transform.position.y, LastCube.transform.position.z);
+        this.moveSpeed = 0f;
+        LastCube = this;
+  
+       
+    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("floorJenga"))
+        {
+            //StartCoroutine(loadCasa());
+            Debug.Log("lose");
         }
+    }
+
+    public IEnumerator loadCasa()
+    {
+        yield return new WaitForSeconds(2f);
+        loadScene();
+    }
+
+    public void loadScene()
+    {
+        SceneLoader.LoadCasaScene();
     }
 }
