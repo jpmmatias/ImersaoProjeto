@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PlayerPlay : MonoBehaviour
+public class PlayerPlayCupBall : MonoBehaviour
 {
     public bool canPick = false;
     public bool picked = false;
@@ -13,20 +13,22 @@ public class PlayerPlay : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
         if (canPick == true)
         {
-            if (Input.GetButtonDown("Fire1")){
+            if (Input.GetButtonDown("Fire1"))
+            {
                 RaycastHit hit;
 
-                if (Physics.Raycast(transform.position,transform.forward,out hit))
+                if (Physics.Raycast(transform.position, transform.forward, out hit))
                 {
+                    Debug.Log("yo");
                     Cup cup = hit.transform.GetComponent<Cup>();
-                    if(cup != null)
+                    if (cup != null)
                     {
                         canPick = false;
                         picked = true;
@@ -36,7 +38,7 @@ public class PlayerPlay : MonoBehaviour
                     }
                 }
             }
-                
+
         }
     }
 }

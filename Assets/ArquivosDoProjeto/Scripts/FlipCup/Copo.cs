@@ -11,28 +11,27 @@ public class Copo : MonoBehaviour
     public float torque = 15f;
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        RaycastHit hit;
+        if (Input.GetButtonDown("Fire1") && Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit))
         {
-     //   startSwipe = Input.mousePosition;
-
-      startSwipe = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+           
+            startSwipe = Camera.main.ScreenToViewportPoint(transform.forward);
         }
         if (Input.GetButtonUp("Fire1"))
         {
-    //  endS  = Input.mousePosition;
-    endS= Camera.main.ScreenToViewportPoint(Input.mousePosition);
+            endS= Camera.main.ScreenToViewportPoint(transform.forward);
             Swipe();
         }
     }
 
  private void Swipe()
     {
-        Vector2 swipe = endS - startSwipe;
+        Vector2 swipe = startSwipe - endS ;
         rb.AddForce(swipe *force, ForceMode.Impulse);
         rb.AddTorque(0f, 0f, torque, ForceMode.Impulse);
     }
